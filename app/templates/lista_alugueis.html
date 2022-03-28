@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Data Retirada</th>
+                <th scope="col">Data Entrega</th>
+                <th scope="col">Entregue</th>
+                <th scope="col">Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluguel in alugueis %}
+                <tr>
+                    <th>{{aluguel.pk}}</th>
+                    <td>{{aluguel.cliente.nome}}</td>
+                    <td>{{aluguel.produto.nome}}</td>
+                    <td>{{aluguel.data_aluguel}}</td>
+                    <td>{{aluguel.data_entrega}}</td>
+                    <td>{{aluguel.entregue}}</td>
+                    <td>{{aluguel.description}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

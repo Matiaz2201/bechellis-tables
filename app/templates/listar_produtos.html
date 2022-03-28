@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produto in produtos %}
+                <tr>
+                    <th>{{produto.pk}}</th>
+                    <td>{{produto.nome}}</td>
+                    <td>{{produto.description}}</td>
+                    <td>R$ {{produto.valor_patrimonio}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
